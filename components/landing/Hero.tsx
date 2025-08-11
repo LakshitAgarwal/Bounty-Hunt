@@ -10,7 +10,7 @@ export default function Hero({ className }: HeroProps) {
   return (
     <section
       className={cn(
-        "relative mx-auto flex max-w-6xl flex-col items-center gap-6 px-4 py-24 sm:py-28 md:py-32 lg:py-40",
+        "relative mx-auto flex max-w-6xl flex-col items-center gap-6 px-4 pt-24 sm:pt-28 md:pt-32 lg:pt-40",
         className
       )}
     >
