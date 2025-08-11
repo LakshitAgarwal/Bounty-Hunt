@@ -67,7 +67,7 @@ export const Footer = () => {
               <Twitter className="h-5 w-5" />
             </a>
             <a
-              href="mailto:contact@bountyhunt.dev"
+              href="mailto:lakshit7811@gmail.com"
               className="text-white/60 hover:text-white transition-colors p-2 rounded-lg hover:bg-white/10"
               aria-label="Email"
             >
