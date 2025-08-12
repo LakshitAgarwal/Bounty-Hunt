@@ -1,4 +1,5 @@
 "use client";
+import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import {
   Navbar,
   NavBody,
@@ -37,7 +38,17 @@ export function NavbarComp() {
           <NavbarLogo />
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
-            <NavbarButton variant="primary">Login</NavbarButton>
+            <SignedOut>
+              <NavbarButton href="/sign-in" variant="secondary">
+                Login
+              </NavbarButton>
+              <NavbarButton href="/sign-up" variant="primary">
+                Sign Up
+              </NavbarButton>
+            </SignedOut>
+            <SignedIn>
+              <UserButton afterSignOutUrl="/" />
+            </SignedIn>
           </div>
         </NavBody>
 
@@ -65,14 +76,27 @@ export function NavbarComp() {
               </a>
             ))}
             <div className="flex w-full flex-col gap-4">
-              <NavbarButton
-                onClick={() => setIsMobileMenuOpen(false)}
-                variant="primary"
-                className="w-full"
-              >
-                Login
-              </NavbarButton>
-              
+              <SignedOut>
+                <NavbarButton
+                  href="/sign-in"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  variant="secondary"
+                  className="w-full"
+                >
+                  Login
+                </NavbarButton>
+                <NavbarButton
+                  href="/sign-up"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  variant="primary"
+                  className="w-full"
+                >
+                  Sign Up
+                </NavbarButton>
+              </SignedOut>
+              <SignedIn>
+                <UserButton afterSignOutUrl="/" />
+              </SignedIn>
             </div>
           </MobileNavMenu>
         </MobileNav>
@@ -80,5 +104,3 @@ export function NavbarComp() {
     </div>
   );
 }
-
-
