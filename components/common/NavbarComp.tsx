@@ -39,18 +39,10 @@ export function NavbarComp() {
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
             <SignedOut>
-              <NavbarButton
-                href="/sign-in"
-                className="cursor-pointer"
-                variant="secondary"
-              >
+              <NavbarButton href="/sign-in" variant="secondary">
                 Login
               </NavbarButton>
-              <NavbarButton
-                href="/sign-up"
-                className="cursor-pointer"
-                variant="primary"
-              >
+              <NavbarButton href="/sign-up" variant="primary">
                 Sign Up
               </NavbarButton>
             </SignedOut>
